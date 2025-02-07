@@ -26,3 +26,10 @@ normally, it would be the branch name, but for this project, i am coding on main
 git fetch origin
 git merge origin/main
 ```
+
+### to get open this project in vscode
+1. navigate into the project in file explorer
+1. right click and open git bash terminal
+```
+code .
+```
