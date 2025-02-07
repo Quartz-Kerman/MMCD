@@ -9,3 +9,20 @@ source .mmcd_venv/Scripts/activate
 ```
 deactivate
 ```
+
+## Git
+### to commit
+1. Stage Changes (click plus. verify changes)
+1. Type a Commit Message
+1. Commit
+
+### to push changes to the remote
+```
+git push origin main
+```
+normally, it would be the branch name, but for this project, i am coding on main
+### to pull changes from the remote to local
+```
+git fetch origin
+git merge origin/main
+```
