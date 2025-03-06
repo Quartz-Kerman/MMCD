@@ -1,4 +1,5 @@
 .mmcd_venv
 sample_Ground_Site_Data.csv
 passwords.json
-auth.txt
+routexl_auth.txt
+gmaps_auth.txt
