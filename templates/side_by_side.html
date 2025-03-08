@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side by Side Comparison</title>
+</head>
+<body>
+    <h1>Side by Side Comparison</h1>
+    <form method="POST">
+        <label for="grid_square_1">Grid Square 1:</label>
+        <input type="text" id="grid_square_1" name="grid_square_1" required><br><br>
+
+        <label for="grid_square_2">Grid Square 2:</label>
+        <input type="text" id="grid_square_2" name="grid_square_2" required><br><br>
+
+        <button type="submit">Compare</button>
+    </form>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>I am a...</h1>
+    <button class="button" onclick="showLoginPopup('technician')">Technician</button>
+    <button class="button" onclick="showLoginPopup('foreman')">Foreman</button>
+    <button class="button" onclick="showLoginPopup('admin')">Admin</button>
+
+    <div id="loginPopup" style="display:none;">
+        <form method="POST" action="/login">
+            <input type="hidden" id="user_type" name="user_type">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function showLoginPopup(userType) {
+            document.getElementById('user_type').value = userType;
+            document.getElementById('loginPopup').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

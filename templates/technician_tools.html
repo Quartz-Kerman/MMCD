@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician Tools</title>
+    <script>
+        let siteCount = 1;
+
+        function addSiteField() {
+            if (siteCount < 10) {
+                siteCount++;
+                const newField = document.createElement('div');
+                newField.innerHTML = `
+                    <label for="site_${siteCount}">Site ${siteCount}:</label>
+                    <input type="text" id="site_${siteCount}" name="site_${siteCount}" required><br><br>
+                `;
+                document.getElementById('siteFields').appendChild(newField);
+            } else {
+                alert('Maximum of 10 sites allowed.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Technician Tools</h1>
+    <form method="POST" action="/technician_tools">
+        <label for="foreman">Foreman:</label>
+        <input type="text" id="foreman" name="foreman" required><br><br>
+
+        <label for="grid_square">Grid Square:</label>
+        <input type="text" id="grid_square" name="grid_square" required><br><br>
+
+        <div id="siteFields">
+            <label for="site_1">Site 1:</label>
+            <input type="text" id="site_1" name="site_1" required><br><br>
+        </div>
+
+        <button type="button" onclick="addSiteField()">+</button><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if map_url %}
+    <iframe width="600" height="450" frameborder="0" style="border:0"
+        src="{{ map_url }}" allowfullscreen></iframe>
+    {% endif %}
+
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>
